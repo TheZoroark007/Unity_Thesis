@@ -21,8 +21,10 @@ public class QRCodeGenerator : MonoBehaviour
                 Width = size
             }
         };
+        //Set the IP adress to the aIP of the host
         string ipAddress = IPManager.ipAddress;
         codeText = ipAddress;
+        //Encode text to QR
         var encoded = writer.Encode(codeText);
         var texture = new Texture2D(encoded.Width, encoded.Height);
         for (int y = 0; y < encoded.Height; ++y)
