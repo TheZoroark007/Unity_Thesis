@@ -16,3 +16,50 @@ How to build:
 The mobile App can be found here: https://drive.google.com/file/d/1zZ7YGFEcMt-pvAT8716p94zKC7B9S785/view?usp=sharing
 
 This Repository uses Zxing.Net whichs License can be found here: https://github.com/zxing/zxing/blob/master/LICENSE
+
+Currently, rotation that was tracked by the Android device is disabled. To enable Kinect -pose/rotation tracking,
+ go to 
+CameraFollow.cs and replace it with this code: 
+using UnityEngine;
+using UnityEngine.UI;
+
+public class CameraFollow : MonoBehaviour
+{
+    public Transform targetObject;
+    public bool applyZOffset = true;
+
+    private Quaternion initialRotation;
+
+    public Button toggleZOffsetButton; // new variable to reference the button
+
+    private void Start()
+    {
+        initialRotation = transform.rotation;
+
+        // Add an onClick listener to the button to toggle the Z offset option
+        if (toggleZOffsetButton != null)
+        {
+            toggleZOffsetButton.onClick.AddListener(ToggleZOffset);
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (targetObject != null)
+        {
+            Vector3 newPosition = targetObject.position;
+            if (applyZOffset)
+            {
+                newPosition -= Vector3.forward * 0.5f;
+            }
+            transform.position = newPosition;
+            transform.rotation = initialRotation;
+        }
+    }
+
+    // Toggle the applyZOffset option when the button is clicked
+    private void ToggleZOffset()
+    {
+        applyZOffset = !applyZOffset;
+    }
+}
