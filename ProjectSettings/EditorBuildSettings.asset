@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/QRScene.unity
     guid: 7d2084262c5d5a141a33dd4e95a3b101
   - enabled: 1

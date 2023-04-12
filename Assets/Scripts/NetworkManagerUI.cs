@@ -67,6 +67,7 @@ private void Awake()
          );
             NetworkManager.Singleton.StartClient();
             Debug.Log("Connecting to " + ipAddress); 
+            waitingText.SetActive(false);
             
         });
         }

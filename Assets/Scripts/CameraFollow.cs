@@ -10,9 +10,13 @@ public class CameraFollow : MonoBehaviour
 
     public Button toggleZOffsetButton;
 
+    // Reference to the RotationVariable script
+    public RotationVariable rotationVariableScript;
+
     private void Start()
     {
-        initialRotation = transform.rotation;
+        // Get the rotation from the static variable in the RotationVariable script
+       initialRotation = RotationVariable.cameraRotation;
 
         // Add an onClick listener to the button to toggle the Z offset option
         if (toggleZOffsetButton != null)
@@ -31,16 +35,18 @@ public class CameraFollow : MonoBehaviour
                 newPosition -= Vector3.forward * 0.5f;
             }
             transform.position = newPosition;
-            transform.rotation = initialRotation;
+
+            // Set the rotation from the static variable in the RotationVariable script
+            transform.rotation = RotationVariable.cameraRotation;
         }
     }
 
-    // Toggle the applyZOffset option when the button is clicked
     private void ToggleZOffset()
     {
         applyZOffset = !applyZOffset;
     }
 }
+
 
 
 
