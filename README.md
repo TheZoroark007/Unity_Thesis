@@ -65,4 +65,5 @@ public class CameraFollow : MonoBehaviour
     }
 }"
 
+The Android App does not need to be recompiled for this 
 
