@@ -17,10 +17,11 @@ The mobile App can be found here: https://drive.google.com/file/d/1zZ7YGFEcMt-pv
 
 This Repository uses Zxing.Net whichs License can be found here: https://github.com/zxing/zxing/blob/master/LICENSE
 
-Currently, rotation that was tracked by the Android device is disabled. To enable Kinect -pose/rotation tracking,
- go to 
+Currently, rotation that was tracked by the Android device is disabled. To enable Kinect -pose/rotation tracking, go to 
 CameraFollow.cs and replace it with this code: 
-using UnityEngine;
+
+
+"using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraFollow : MonoBehaviour
@@ -62,4 +63,6 @@ public class CameraFollow : MonoBehaviour
     {
         applyZOffset = !applyZOffset;
     }
-}
+}"
+
+
