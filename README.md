@@ -14,4 +14,5 @@ How to build:
 - Click on "Build and run"
 
 The mobile App can be found here: https://drive.google.com/file/d/1zZ7YGFEcMt-pvAT8716p94zKC7B9S785/view?usp=sharing
+
 This Repository uses Zxing.Net whichs License can be found here: https://github.com/zxing/zxing/blob/master/LICENSE
