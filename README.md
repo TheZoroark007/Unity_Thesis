@@ -21,6 +21,7 @@ Currently, rotation that was tracked by the Android device is disabled. To enabl
 CameraFollow.cs and replace it with this code: 
 
 
+
 "using UnityEngine;
 using UnityEngine.UI;
 
